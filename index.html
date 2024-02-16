@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -32,33 +35,33 @@
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
             <div class="btn btn_pink">
-                Explorez nos restaurants
+               <a href="#"> Explorez nos restaurants</a>
             </div>
         </div>
 
-        <div class="steps">
+        <div id="fonctionnement">
             <h2>Fonctionnement</h2>
             
-            
-            <div class="btn">
-                <div class="number" >1</div>
-                <a href="#" >  <i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</a>
+            <div class="howtoorder">
+                <div class="btn">
+                    <div class="number" >1</div>
+                    <div><a href="#" >  <i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</a></div>
+                </div>
+                <div class="btn">
+                    <div class="number">2</div>
+                    <a href="#" > <i class="fa-solid fa-list-ul"></i>Composez votre menu</a>
+                </div>
+                <div class="btn">
+                    <div class="number">3</div>
+                    <a href="#" > <i class="fa-solid fa-store"></i>Dégustez au restaurant</a>
+                </div>
             </div>
-            
-
-            <div class="btn">
-                <div class="number">2</div>
-                <a href="#" > <i class="fa-solid fa-list-ul"></i>Composez votre menu</a>
-            </div>
-            <div class="btn">
-                <div class="number">3</div>
-                <a href="#" > <i class="fa-solid fa-store"></i>Dégustez au restaurant</a>
-            </div>
-            
+                        
         </div>
 
         <div class="restaurants">
             <h2>Restaurants</h2>
+            <div class="cards">
             <a href="menu_palette_gout.html"  target="_blank">
                 <article class="card">
                     <p class="btn btn_new">Nouveau</p>
@@ -69,9 +72,9 @@
                         <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
                         </div>
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
                     </div>
                     
                  </article>
@@ -88,9 +91,9 @@
                         <h3>La note enchantée</h3> <br/>
                         <p>Charonne</p>
                         </div>
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
                     </div>
                 </article>
             </a>
@@ -103,9 +106,9 @@
                         <h3>A la française</h3>
                         <p>Cité rouge</p>
                         </div>
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
                     </div>
                     
                 </article>
@@ -119,22 +122,22 @@
                         <h3>Le délice des sens</h3>
                         <p>Folie-Méricourt</p>
                         </div>
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
                     </div>
                     
                 </article>
             </a>
-
+            </div>
         </div>
     </section>    
     <footer class="footer">
         <img src="/Images et textes Ohmyfood/images/logo/ohmyfood@2x.svg" alt="logo oh my food" class="logo">
         <ul>
-            <li> <a href="#"><i class="fa-solid fa-utensils"></i>  Proposer un restaurant</a></li>
-            <li> <a href="#"><i class="fa-solid fa-handshake-angle"></i>  Devenir partenaire</a></li>
-            <li> <a href="#"> Mentions légales </a></li>
+            <li> <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
+            <li> <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
+            <li> <a href="#">Mentions légales</a></li>
             <li> <a href="#">Contact</a></li>
         </ul>
     </footer>
