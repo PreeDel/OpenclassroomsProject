@@ -18,8 +18,8 @@ body {
     font-family: 'Roboto';
     padding-bottom: 0px;
     margin-bottom: 0px;
-    background-color: none;
-     
+    background-color: white;
+
 
 }
 
@@ -27,24 +27,25 @@ header {
 
     padding-top: 30px;
 
-    a{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    position: relative;
-    }    
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative;
+    }
 
 
     .fa-arrow-left {
         display: block;
         position: absolute;
         left: 20px;
-         
-
     }
 
+    .logo{
+        width: 50%;
+    }
 }
 
 
@@ -67,14 +68,13 @@ header {
 
 .menu {
     width: 100%;
-     
     box-sizing: border-box;
     background-color: $bg-color;
     border-radius: 35px 35px 0 0;
     padding: 20px 10px;
     margin: 0px;
     position: relative;
-     
+
 }
 
 .name_restau {
@@ -90,11 +90,13 @@ header {
         font-size: 48px;
         font-weight: 300;
         color: #101010;
+        padding: 0px 10px;
     }
 
-    .material-symbols-outlined {
-        margin-left: 15px;
-        font-size: 48px;
+    i {
+        margin-left: 10%;
+        font-size: 36px;
+        font-weight: 100;
     }
 }
 
@@ -111,11 +113,16 @@ a {
     color: inherit;
 }
 
+.texte {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
 .btn {
     width: 100%;
     height: 5rem;
-    margin: 30px;
+    margin: 30px 0px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -126,16 +133,7 @@ a {
     border-radius: 25px;
     box-shadow: 1px 1px 15px 1px darken($color: $bg-color, $amount: 1.2);
     color: black;
-
-
-    &:active + .hidden{
-        display: block;
-        transform: translatex(-150%);
-    }
-
-
-
-
+    
 
     &_pink {
         background: radial-gradient(ellipse at top left, $secondary-color, $primary-color);
@@ -150,31 +148,39 @@ a {
     }
 
     &_menu {
-        background-color: $tertiary-color;
-        width: 5rem;
-        height: 5rem;
-        padding: 10px;
-        border-radius: 0 15px 15px 0;
-        // align-items: center;
-        justify-content: center;
-
-        // transition: transform 4000ms ease-out;
-
-
+        width: 0px;
+        overflow: hidden;
+       
         .fa-circle-check {
-            color: lighten($color: $bg-color, $amount: 2);
-            font-size: 3rem;
+            overflow: hidden;
+        
         }
     }
 
-    &_menu.hidden {
-        display: none;
-
-        transition: all ;
+    &_menu .hidden {
+        width: 0px;
+        overflow: hidden;
     }
 }
 
+.plat:hover .hidden {
+    background-color: $tertiary-color;
+    width: 5rem;
+    height: 5rem;
+    padding: 15px;
+    border-radius: 0 15px 15px 0;
+    align-items: center;
+    justify-content: center;
 
+    .fa-circle-check {
+        color: lighten($color: $bg-color, $amount: 2);
+        font-size: 3rem;
+    }
+}
+
+.plat:hover .btn {
+    border-radius: 15px 0px 0px 15px;
+}
 
 
 h3 {
@@ -230,7 +236,6 @@ div {
 
 .footer {
     background-color: #353535;
-     
     margin: 0px;
 
     .logo {
@@ -269,15 +274,11 @@ div {
 
 @media (min-width: 1024px) {
 
-    .menu{
+    .menu {
         margin: 0px 10%;
         padding: 10px 10%;
         width: 80%;
     }
-
-
-
-
 
     .footer {
         display: flex;
@@ -289,7 +290,7 @@ div {
             flex-direction: row;
             margin-top: 35px;
 
-            li{
+            li {
                 margin-left: 30px;
             }
         }

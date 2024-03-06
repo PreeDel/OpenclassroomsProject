@@ -4,20 +4,12 @@ body {
   width: 100%;
 }
 
-@keyframes changecolor {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: red;
-  }
-}
 .main-container {
   display: flex;
   width: 100%;
   flex-direction: column;
   font-family: "Roboto";
-  animation: changecolor 1s ease forwards;
+  background-color: #f6f6f6;
 }
 
 a {
@@ -25,7 +17,15 @@ a {
   color: inherit;
 }
 
-i, h3, p {
+.texte {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+i,
+h3,
+p {
   margin: 10px;
 }
 
@@ -61,11 +61,6 @@ header img {
   background-color: #eeeeee;
   box-shadow: 2px 2px 2px 2px #f2f2f2;
 }
-.location:hover {
-  transform: scaleY(2);
-  background-color: #FF79DA;
-  transition: all 3000ms ease-in-out;
-}
 .location input {
   text-decoration: none;
   width: 200px;
@@ -81,6 +76,7 @@ header img {
   align-items: center;
   background-color: #f6f6f6;
   text-align: center;
+  font-family: "Roboto";
 }
 .reservation h1 {
   font-weight: 600;
@@ -99,28 +95,36 @@ header img {
   justify-content: center;
   padding-left: 30px;
   background-color: white;
+  font-family: "Roboto";
+}
+#fonctionnement .howtoorder .btn:hover i {
+  color: #9356DC;
+}
+#fonctionnement h2 {
+  padding-left: 40px;
 }
 #fonctionnement .number {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: #9356DC 1px solid;
   background-color: #9356DC;
   border-radius: 50%;
   color: white;
   text-align: center;
-  position: relative;
-  right: 20px;
-  top: 0px;
+  position: absolute;
+  left: -3%;
+  top: 35%;
 }
 
 .btn {
-  width: 400px;
-  height: 75px;
+  width: 90%;
+  height: 5rem;
   margin: 30px;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #f6f6f6;
   border: 1px solid #f6f6f6;
@@ -128,12 +132,17 @@ header img {
   box-shadow: 1px 1px 15px 1px #f3f3f3;
   color: black;
   text-align: center;
+  font-size: 36px;
+  font-weight: 100;
+  position: relative;
 }
 .btn_pink {
+  width: 35%;
   background: radial-gradient(ellipse at top left, #FF79DA, #9356DC);
   color: white;
   justify-content: center;
   border-radius: 25rem;
+  font-size: 120%;
 }
 .btn_new {
   background-color: #99E2D0;
@@ -142,20 +151,22 @@ header img {
   width: 70px;
   height: 25px;
   position: absolute;
-  margin-left: 70%;
+  margin-left: 80%;
   margin-bottom: 0px;
   color: #008766;
   justify-content: center;
+  font-size: 18px;
 }
 
 .restaurants {
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
-  padding: 20px;
+  padding: 0px;
+  font-family: "Roboto";
 }
 .restaurants h2 {
-  padding-left: 10px;
+  padding-left: 60px;
 }
 
 .cards {
@@ -163,9 +174,11 @@ header img {
   flex-wrap: wrap;
   justify-content: space-evenly;
   height: 25%;
+  padding: 0;
+  margin: 0;
 }
 .cards a {
-  width: 40%;
+  width: 90%;
 }
 
 .card {
@@ -190,18 +203,20 @@ header img {
   flex-direction: row;
   justify-content: space-between;
 }
-.card .card_content:hover .material-symbols-outlined {
-  transform: scale(1.15);
-  color: #FF79DA;
-}
 .card .card_info {
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding: 10px;
 }
 .card .card_info h3 {
   width: 100%;
   font-size: 16px;
+  padding: 0;
+  margin: 0px 0px 0px 10px;
+}
+.card .card_info p {
+  margin-top: 0px;
 }
 .card .heart_container {
   width: 50px;
@@ -216,6 +231,10 @@ header img {
   transition: opacity 1s;
 }
 .card .heart_container .filled_heart {
+  color: #FF79DA;
+  background: radial-gradient(ellipse at top left, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
 }
 .card .heart_container .empty_heart {
@@ -224,16 +243,11 @@ header img {
 .card .heart_container .filled_heart:hover {
   opacity: 1;
 }
-.card .material-symbols-outlined {
-  padding-right: 10px;
-  transition: all 3s ease-in-out;
-}
 
 .footer {
   background-color: #353535;
   color: white;
   margin-top: 30px;
-  transition: all 5000ms ease-in-out;
 }
 .footer .logo {
   width: 20%;
@@ -264,10 +278,11 @@ header img {
     display: flex;
     flex-direction: column;
   }
-  .main-container section #fonctionnement {
-    order: -1;
-  }
-  .header, .location, .reservation, #fonctionnement, .restaurants {
+  .header,
+  .location,
+  .reservation,
+  #fonctionnement,
+  .restaurants {
     padding: 0px 75px;
   }
   #fonctionnement .howtoorder {
@@ -277,11 +292,18 @@ header img {
   }
   #fonctionnement .btn {
     max-width: 30%;
+    font-size: 125%;
   }
   .cards {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+  .cards a {
+    width: 40%;
+  }
+  .cards .btn_new {
+    margin-left: 70%;
   }
   footer {
     display: flex;
