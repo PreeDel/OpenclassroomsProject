@@ -60,6 +60,30 @@ header .logo {
   position: relative;
 }
 
+.entrees {
+  transform: translateX(-3000px);
+  animation: dishes_coming 4s forwards;
+}
+
+.plats {
+  transform: translateX(-3000px);
+  animation: dishes_coming 6s forwards;
+}
+
+.desserts {
+  transform: translateX(-3000px);
+  animation: dishes_coming 8s forwards;
+}
+
+@keyframes dishes_coming {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}
 .name_restau {
   display: flex;
   flex-direction: row;
@@ -126,27 +150,23 @@ a {
 .btn_menu {
   width: 0px;
   overflow: hidden;
-}
-.btn_menu .fa-circle-check {
-  overflow: hidden;
-}
-.btn_menu .hidden {
-  width: 0px;
-  overflow: hidden;
-}
-
-.plat:hover .hidden {
+  transition: width 1s ease-in-out, padding 1s ease-in-out;
   background-color: #99E2D0;
-  width: 5rem;
   height: 5rem;
-  padding: 15px;
+  padding: 15px 0px;
   border-radius: 0 15px 15px 0;
   align-items: center;
   justify-content: center;
 }
-.plat:hover .hidden .fa-circle-check {
+.btn_menu .fa-circle-check {
+  overflow: hidden;
   color: #fbfbfb;
   font-size: 3rem;
+}
+
+.plat:hover .hidden {
+  width: 5rem;
+  padding: 15px;
 }
 
 .plat:hover .btn {

@@ -7,9 +7,90 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    
 }
 
-.main-container {
+.loader_container {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 1); 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; 
+
+    animation: loader_ended 25s ease-out;
+
+    transform: translateX(-5000px);
+    
+    div{
+        position: absolute;
+        
+    }
+}
+
+@keyframes loader_ended {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        opacity: 1.2;
+    }
+    100%{
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 1);
+        z-index: 0;
+       
+    }
+    
+}
+
+.loader_round1 {
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top-color: $primary-color;
+    border-bottom-color: $tertiary-color;
+    width: 40px;
+    height: 40px;
+    animation: spin 5s linear infinite;
+}
+
+.loader_round2 {
+    border: 15px solid transparent;
+    border-radius: 50%;   
+    border-right-color:$secondary-color;
+    border-left-color:$primary-color;
+    width: 70px;
+    height: 70px;
+    animation: spin 4s linear infinite;
+}
+
+.loader_round3 {
+    border: 55px solid transparent;
+    border-radius: 50%;
+    border-top-color:$tertiary-color;
+    border-bottom-color:$secondary-color;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+.main_container {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -180,6 +261,11 @@ header {
         font-size: 18px;
 
     }
+
+    &:hover{
+        background-color: lighten($color: $bg-color, $amount: 2);
+        box-shadow: 1px 10px 7px 1px darken($color: $bg-color, $amount: 1.2);
+    }
 }
 
 .restaurants {
@@ -267,9 +353,10 @@ header {
 
         .filled_heart {
             color: $secondary-color;
-            background: radial-gradient(ellipse at top left, $secondary-color, $primary-color);
+            background: radial-gradient(ellipse at bottom, $secondary-color, $primary-color);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text, border-box;
             opacity: 0;
         }
 
@@ -287,7 +374,6 @@ header {
     background-color: #353535;
     color: white;
     margin-top: 30px;
-    // transition: all 5000ms ease-in-out;
 
     .logo {
         width: 20%;

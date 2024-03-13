@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -19,10 +20,13 @@
 </head>
 
 <body>
-    <div class="main-container">
-        <div class="loader">
+    <div class="loader_container">
+        <div class="loader_round1"></div>
+        <div class="loader_round2"></div>
+        <div class="loader_round3"></div>
+    </div>
 
-        </div>
+    <div class="main_container">
         <header class="header">
 
             <i class="fa-solid fa-arrow-left"></i>
@@ -39,7 +43,7 @@
                 <h1>Réservez le menu qui vous convient</h1>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
                 <div class="btn btn_pink">
-                    <a href="#"> Explorez nos restaurants</a>
+                    <a href="#restau"> Explorez nos restaurants</a>
                 </div>
             </div>
 
@@ -64,7 +68,7 @@
 
             </div>
 
-            <div class="restaurants">
+            <div class="restaurants" id="restau">
                 <h2>Restaurants</h2>
                 <div class="cards">
                     <a href="menu_palette_gout.html" target="_blank">
@@ -151,7 +155,7 @@
                 <li> <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
                 <li> <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
                 <li> <a href="#">Mentions légales</a></li>
-                <li> <a href="#">Contact</a></li>
+                <li> <a href="mailto:contact@ohmyfood.fr">Contact</a></li>
             </ul>
         </footer>
     </div>

@@ -43,7 +43,7 @@ header {
         left: 20px;
     }
 
-    .logo{
+    .logo {
         width: 50%;
     }
 }
@@ -75,7 +75,36 @@ header {
     margin: 0px;
     position: relative;
 
+
 }
+
+.entrees {
+    transform: translateX(-3000px);
+    animation: dishes_coming 4s forwards;
+}
+
+.plats {
+    transform: translateX(-3000px);
+    animation: dishes_coming 6s forwards;
+}
+
+.desserts {
+    transform: translateX(-3000px);
+    animation: dishes_coming 8s forwards;
+}
+
+@keyframes dishes_coming {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+}
+
+
 
 .name_restau {
     display: flex;
@@ -106,8 +135,6 @@ div {
     text-overflow: ellipsis;
 }
 
-
-
 a {
     text-decoration: none;
     color: inherit;
@@ -133,7 +160,6 @@ a {
     border-radius: 25px;
     box-shadow: 1px 1px 15px 1px darken($color: $bg-color, $amount: 1.2);
     color: black;
-    
 
     &_pink {
         background: radial-gradient(ellipse at top left, $secondary-color, $primary-color);
@@ -150,32 +176,25 @@ a {
     &_menu {
         width: 0px;
         overflow: hidden;
-       
+        transition: width 1s ease-in-out, padding 1s ease-in-out;
+        background-color: $tertiary-color;
+        height: 5rem;
+        padding: 15px 0px;
+        border-radius: 0 15px 15px 0;
+        align-items: center;
+        justify-content: center;
+
         .fa-circle-check {
             overflow: hidden;
-        
+            color: lighten($color: $bg-color, $amount: 2);
+            font-size: 3rem;
         }
     }
-
-    &_menu .hidden {
-        width: 0px;
-        overflow: hidden;
-    }
 }
-
+//rend visible la coche verte 
 .plat:hover .hidden {
-    background-color: $tertiary-color;
     width: 5rem;
-    height: 5rem;
     padding: 15px;
-    border-radius: 0 15px 15px 0;
-    align-items: center;
-    justify-content: center;
-
-    .fa-circle-check {
-        color: lighten($color: $bg-color, $amount: 2);
-        font-size: 3rem;
-    }
 }
 
 .plat:hover .btn {
@@ -226,8 +245,6 @@ div {
 
     }
 
-    // .btn:active + .btn_menu{
-    //     transform: translateX(100%);
 
 }
 
