@@ -1,106 +1,155 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
-$tertiary-color: #99E2D0; 
+$tertiary-color: #99E2D0;
 $bg-color: #f6f6f6;
 
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
-    
+
 }
 
-.main-container{
-   
+.main-container {
+
     display: flex;
     width: 100%;
-    flex-direction: column; 
+    flex-direction: column;
     font-family: 'Roboto';
     padding-bottom: 0px;
-    background-color: $bg-color;
-    
+    margin-bottom: 0px;
+    background-color: white;
+
+
 }
 
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    padding: 20px;
+header {
 
-    
-    
-    .fa-arrow-left{
-        // display: block;
-        margin-right: 100px;
+    padding-top: 30px;
 
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative;
     }
-        
+
+
+    .fa-arrow-left {
+        display: block;
+        position: absolute;
+        left: 20px;
+    }
+
+    .logo {
+        width: 50%;
+    }
 }
 
 
-.img_restau{
+.img_restau {
     width: 100%;
     height: 30rem;
     margin: 0px;
     padding: 0px;
-   
-    img{
+    position: relative;
+    bottom: -60px;
+
+    img {
         width: 100%;
         object-fit: cover;
         margin: 0px;
         padding: 0px;
     }
-    
+
 }
 
-.menu{
+.menu {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     background-color: $bg-color;
     border-radius: 35px 35px 0 0;
-    padding: 20px;
+    padding: 20px 10px;
+    margin: 0px;
     position: relative;
-    top: -150px;
+
+
 }
 
-.name_restau{
+.entrees {
+    transform: translateX(-3000px);
+    animation: dishes_coming 4s forwards;
+}
+
+.plats {
+    transform: translateX(-3000px);
+    animation: dishes_coming 6s forwards;
+}
+
+.desserts {
+    transform: translateX(-3000px);
+    animation: dishes_coming 8s forwards;
+}
+
+@keyframes dishes_coming {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+}
+
+
+
+.name_restau {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Shrikhand';
     margin: 0px;
 
-    h1{
+    h1 {
         margin: 0px;
-        font-size: 60px;
+        font-size: 48px;
         font-weight: 300;
         color: #101010;
+        padding: 0px 10px;
     }
 
-    .material-symbols-outlined{
-        margin-left: 15%;
+    i {
+        margin-left: 10%;
+        font-size: 36px;
+        font-weight: 100;
     }
 }
 
-h1, h3, div{
+h1,
+h3,
+div {
     text-overflow: ellipsis;
 }
 
-
-
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
+.texte {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
-.btn{ 
+.btn {
     width: 100%;
     height: 5rem;
-    margin: 30px;
+    margin: 30px 0px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -109,14 +158,11 @@ a{
     background-color: lighten($color: $bg-color, $amount: 2);
     border: 1px solid $bg-color;
     border-radius: 25px;
-    box-shadow: 10px 25px 55px 5px $bg-color;
+    box-shadow: 1px 1px 15px 1px darken($color: $bg-color, $amount: 1.2);
     color: black;
-     
-    
 
-   
-    &_pink{
-        background : radial-gradient(ellipse at top left, $secondary-color, $primary-color);
+    &_pink {
+        background: radial-gradient(ellipse at top left, $secondary-color, $primary-color);
         color: white;
         font-size: 24px;
         text-align: center;
@@ -126,60 +172,71 @@ a{
         height: 4rem;
         margin-left: 30%;
     }
-    
-    &_menu{
+
+    &_menu {
+        width: 0px;
+        overflow: hidden;
+        transition: width 1s ease-in-out, padding 1s ease-in-out;
         background-color: $tertiary-color;
-        width: 5rem;
         height: 5rem;
-        padding: 10px;
+        padding: 15px 0px;
         border-radius: 0 15px 15px 0;
-        // align-items: center;
+        align-items: center;
         justify-content: center;
 
-        .fa-circle-check{
+        .fa-circle-check {
+            overflow: hidden;
             color: lighten($color: $bg-color, $amount: 2);
             font-size: 3rem;
         }
     }
-
-    &_menu.hidden{
-        display: none;
-    }
-
-
-    h3{
-        width: 100%;
-        margin: 0;
-    }
-
-    div{
-        width: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-    }
-
+}
+//rend visible la coche verte 
+.plat:hover .hidden {
+    width: 5rem;
+    padding: 15px;
 }
 
-.entrees, .plats, .desserts{
+.plat:hover .btn {
+    border-radius: 15px 0px 0px 15px;
+}
+
+
+h3 {
+    width: 100%;
+    margin: 0;
+}
+
+div {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.entrees,
+.plats,
+.desserts {
     display: flex;
     flex-direction: column;
 
-    div{
+    div {
         display: flex;
         align-items: center;
-            
-      
+
+
     }
 
-    h2{
+    h2 {
         width: 100%;
         font-size: 24px;
         font-weight: 100;
         margin-bottom: 0px;
     }
 
-    .line{
+    .line {
         width: 4rem;
         height: 3px;
         background-color: $tertiary-color;
@@ -187,46 +244,72 @@ a{
         border: none;
 
     }
-   
+
+
 }
 
 
 
 
-.footer{
-    background-color:#353535;
-     
+.footer {
+    background-color: #353535;
     margin: 0px;
-        
-    .logo{
+
+    .logo {
         width: 20%;
         filter: invert(100%);
         margin: 30px;
         padding: 0px;
-        
+
     }
-    
-    ul{
+
+    ul {
         list-style-type: none;
         padding: 0px;
-        margin : 10px 30px; 
+        margin: 10px 30px;
     }
 
-    i{
+    i {
         margin: 0px;
-        
+
     }
 
-    .fa-utensils{
+    .fa-utensils {
         margin-right: 15px;
     }
 
-    .fa-handshake-angle{
+    .fa-handshake-angle {
         margin-right: 10px;
     }
 
-    li{
+    li {
         margin: 10px 0px;
         color: lighten($color: $bg-color, $amount: 2);
     }
-}  
+}
+
+
+@media (min-width: 1024px) {
+
+    .menu {
+        margin: 0px 10%;
+        padding: 10px 10%;
+        width: 80%;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 15px;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            margin-top: 35px;
+
+            li {
+                margin-left: 30px;
+            }
+        }
+    }
+}
