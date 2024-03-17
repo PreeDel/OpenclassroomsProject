@@ -11,7 +11,7 @@ body {
 }
 
 /*******************************  
- * animation du loader 
+  animation du loader 
  *******************************/
 .loader_container {
     height: 100%;
@@ -92,6 +92,7 @@ body {
         transform: rotate(360deg) scale(2);
     }
 }
+/*************** fin du loader **************/
 
 .main_container {
     display: flex;

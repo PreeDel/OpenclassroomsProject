@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -60,6 +61,11 @@ header .logo {
   position: relative;
 }
 
+/*******************************  
+
+  apparition des menus 
+
+ *******************************/
 .entrees {
   transform: translateX(-3000px);
   animation: dishes_coming 4s forwards;
@@ -84,6 +90,7 @@ header .logo {
     opacity: 1;
   }
 }
+/************** fin apparition menus **************/
 .name_restau {
   display: flex;
   flex-direction: row;
@@ -122,6 +129,12 @@ a {
   overflow: hidden;
 }
 
+/*******************************  
+
+  boutons 
+  & animation pour le sélecteur de plats
+
+ *******************************/
 .btn {
   width: 100%;
   height: 5rem;
@@ -173,6 +186,7 @@ a {
   border-radius: 15px 0px 0px 15px;
 }
 
+/************** fin sélecteur de plats *************/
 h3 {
   width: 100%;
   margin: 0;
